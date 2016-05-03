@@ -10,6 +10,7 @@
     .controller("PostIndexController", PostIndexControllerFunc)
     .controller("PostShowController", PostShowControllerFunc);
 
+
   function PostController(){
     var vm = this;
 
@@ -21,6 +22,14 @@
 
     }
 
+    function RouterFunction($stateProvider, $locationProvider){
+      $locationProvider.html5Mode(true);
+      $stateProvider
+      .state("postIndex", {
+        url: "/posts",
+        templateUrl: "js/show.controller.js"
+      })
+    }
   }
 
 })();
