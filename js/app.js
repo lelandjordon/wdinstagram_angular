@@ -11,10 +11,10 @@
 
     function RouterFunction($stateProvider){
     $stateProvider
-    .state("postIndex", {
-      url: "/posts",
-      templateUrl: "js/index.html",
-      controller: "PostIndexController",
+    .state("postIndex", {    // This name is how we reference this state, like a view, from the rest of the app.
+      url: "/posts",      // When the URL says this...
+      templateUrl: "js/index.html",   // ... the app goes here...
+      controller: "PostIndexController",  // then uses this controller to do something.
       controllerAs: "PostIndexViewModel"
     })
     .state("postNew", {
