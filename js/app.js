@@ -13,25 +13,25 @@
     $stateProvider
     .state("postIndex", {
       url: "/posts",
-      templateUrl: "js/posts/index.html",
+      templateUrl: "js/index.html",
       controller: "PostIndexController",
       controllerAs: "PostIndexViewModel"
     })
     .state("postNew", {
       url: "/posts/new",
-      templateUrl: "js/posts/new.html",
+      templateUrl: "js/new.html",
       controller: "PostNewController",
       controllerAs: "PostNewViewModel"
     })
     .state("postShow", {
       url: "/posts/:id",
-      templateUrl: "js/posts/show.html",
+      templateUrl: "js/show.html",
       controller: "PostShowController",
       controllerAs: "PostShowViewModel"
     })
     .state("postEdit", {
       url: "/posts/:id/edit",
-      templateUrl: "js/posts/edit.html",
+      templateUrl: "js/edit.html",
       controller: "PostEditController",
       controllerAs: "PostEditViewModel"
     });
