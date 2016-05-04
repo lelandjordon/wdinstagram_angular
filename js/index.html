@@ -1,6 +1,6 @@
 <h2>These are all the Posts</h2>
 
-<div data-ng-repeat="Post in PostIndexViewModel.Posts">
-  <p><a data-ui-sref="PostShow({id: Post.id})">{{Post.title}}</a></p>
-  <a data-ui-sref="PostEdit({id: Post.id})">Edit</a>
+<div data-ng-repeat="post in PostIndexViewModel.posts">
+  <p><a data-ui-sref="postShow({id: post.id})">{{post.author}}</a></p>
+  <a data-ui-sref="postEdit({id: post.id})">Edit</a>
 </div>
