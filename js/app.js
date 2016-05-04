@@ -6,30 +6,35 @@
       "ui.router",
       "posts"
     ])
-    .config(["$stateProvider", "$locationProvider", RouterFunction]);
-    .controller("PostIndexController", PostIndexControllerFunc)
-    .controller("PostShowController", PostShowControllerFunc);
+    .config(["$stateProvider", RouterFunction]);
 
 
-  function PostController(){
-    var vm = this;
-
-    vm.posts = [{photo_url: "blank", author:"Steve", body:"a post"},
-                {photo_url: "blank2", author:"Grasshopper", body:"another post"}
-              ];
-
-    vm.create = function(){
-
-    }
-
-    function RouterFunction($stateProvider, $locationProvider){
-      $locationProvider.html5Mode(true);
-      $stateProvider
-      .state("postIndex", {
-        url: "/posts",
-        templateUrl: "js/show.controller.js"
-      })
-    }
+    function RouterFunction($stateProvider){
+    $stateProvider
+    .state("postIndex", {
+      url: "/posts",
+      templateUrl: "js/posts/index.html",
+      controller: "PostIndexController",
+      controllerAs: "PostIndexViewModel"
+    })
+    .state("postNew", {
+      url: "/posts/new",
+      templateUrl: "js/posts/new.html",
+      controller: "PostNewController",
+      controllerAs: "PostNewViewModel"
+    })
+    .state("postShow", {
+      url: "/posts/:id",
+      templateUrl: "js/posts/show.html",
+      controller: "PostShowController",
+      controllerAs: "PostShowViewModel"
+    })
+    .state("postEdit", {
+      url: "/posts/:id/edit",
+      templateUrl: "js/posts/edit.html",
+      controller: "PostEditController",
+      controllerAs: "PostEditViewModel"
+    });
   }
 
 })();
