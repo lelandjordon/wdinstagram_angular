@@ -3,9 +3,12 @@
 (function(){
   angular
     .module("wdinstagram", [
-      "ui.router",
-      "posts"
+      "ui.router"
     ])
-    
+    // .config(["$stateProvider", RouterFunc])
+
+
+
+
 
 })();
